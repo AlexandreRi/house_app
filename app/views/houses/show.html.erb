@@ -1,0 +1,7 @@
+<%= @house.name %>
+<%= @house.address %>
+<%= @house.price %>
+<%= @house.rating %>
+<%= link_to 'Edit this house', edit_path(@house) %>
+<%= link_to 'Back to home page', root_path %>
+<%= link_to 'Delete this house', destroy_path(@house), method: :delete %>

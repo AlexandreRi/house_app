@@ -1,0 +1,28 @@
+.banner-home {
+  background-size: cover;
+  height: 570px;
+}
+
+.home-search-form {
+  position: relative;
+  top: 130px;
+  right: 600px;
+  border-radius: 5px;
+    .content {
+  font-weight: bold;
+  font-size: 15px;
+ }
+}
+
+.container > h1 {
+  position: relative;
+  top: 170px;
+  left: 450px;
+  color: white;
+}
+.button-btn-blue {
+  color: white;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 10px;
+}
