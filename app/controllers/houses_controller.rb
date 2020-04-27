@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def home
+  def index
     @houses = House.all
   end
 

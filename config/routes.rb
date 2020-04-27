@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'houses#home'
+  root to: 'pages#home'
+  get '/houses', to: 'houses#index'
   get '/houses/new', to: 'houses#new'
   get '/houses/:id', to: 'houses#show', as: :house
   post '/houses', to: 'houses#create'

@@ -1,5 +1,9 @@
 .house-card-index {
   height: 300px;
+    img {
+    object-fit: cover;
+    width: 100%;
+  }
 }
 
 .logo {
