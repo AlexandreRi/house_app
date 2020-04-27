@@ -1,3 +1,3 @@
 class House < ApplicationRecord
-  validates :name, :address, :price, presence: true
+  validates :name, :address, :price, :user, presence: true
 end

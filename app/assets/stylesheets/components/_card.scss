@@ -1,9 +1,6 @@
 .house-card-index {
-  height: 300px;
-    img {
-    object-fit: cover;
-    width: 100%;
-  }
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
 }
 
 .logo {
@@ -11,10 +8,22 @@
   width: 40px;
 }
 
-.home-card-picture {
-  background-size: cover;
+.img-house-card-index img {
+  object-fit: cover;
+  width: 100%;
 }
 
 .home-card-infos {
-
+  h1 {
+    font-size: 19px;
+  }
+  .house-name {
+    margin: 5px;
+  }
+  .house-address {
+    margin: 5px;
+  }
+  .house-price-rating {
+    margin: 5px;
+  }
 }
