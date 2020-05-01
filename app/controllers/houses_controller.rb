@@ -2,7 +2,8 @@ class HousesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @houses = House.all
+    @houses = policy_scope(House)
+    authorize @houses
   end
 
   def new
@@ -18,8 +19,9 @@ class HousesController < ApplicationController
   def create
     @house = House.new(strong_params)
     authorize @house
+    @house.user_id = current_user.id
     @house.save
-    redirect_to root_path
+    redirect_to house_path(@house)
   end
 
   def edit
@@ -45,6 +47,6 @@ class HousesController < ApplicationController
   private
 
   def strong_params
-    params.require(:house).permit(:name, :address, :price, :rating)
+    params.require(:house).permit(:name, :address, :price, :description, :rating)
   end
 end

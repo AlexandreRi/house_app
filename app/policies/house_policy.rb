@@ -10,4 +10,11 @@ class HousePolicy < ApplicationPolicy
   def new?
     create?
   end
+  def index?
+    true
+  end
+
+  def show?
+    true
+  end
 end
