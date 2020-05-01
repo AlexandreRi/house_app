@@ -7,14 +7,17 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
+    authorize @house
   end
 
   def show
     @house = House.find(params[:id])
+    authorize @house
   end
 
   def create
     @house = House.new(strong_params)
+    authorize @house
     @house.save
     redirect_to root_path
   end
@@ -22,15 +25,18 @@ class HousesController < ApplicationController
   def edit
     @house = House.find(params[:id])
     @house = House.new
+    authorize @house
   end
 
   def update
-    @restaurant = Restaurant.find(params[:id])
+    @house = House.find(params[:id])
     @house = House.new(strong_params)
+    authorize @house
     redirect_to house_path
   end
 
   def destroy
+    authorize @house
     @house = House.find(params[:id])
     @house.destroy
     redirect_to root_path

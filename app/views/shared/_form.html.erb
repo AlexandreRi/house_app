@@ -1,7 +1,7 @@
 <%= simple_form_for(@house) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :rating %>
-  <%= f.submit %>
+  <%= f.input :name, label: false, placeholder: "Name of the house" %>
+  <%= f.input :description, label: false, :input_html => {:rows => 4}, placeholder: "Tell us more abour your house right here" %>
+  <%= f.input :price, label: false, placeholder: "Price per day" %>
+  <%= f.input :photo, as: :file, input_html: { class: 'd-none', multiple: true }, label_html: { class: 'upload-workshop-photos'}, label: 'Upload some pictures' %>
+  <%= f.submit 'Valider', class: 'button btn-blue' %>
 <% end %>
