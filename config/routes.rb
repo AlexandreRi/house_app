@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
+  resources :profiles
   get '/houses', to: 'houses#index'
   get '/houses/new', to: 'houses#new'
   get '/houses/:id', to: 'houses#show', as: :house
