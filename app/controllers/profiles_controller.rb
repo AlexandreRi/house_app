@@ -4,7 +4,6 @@ class ProfilesController < ApplicationController
 
   def show
     authorize @profile
-    @place = Place.new
   end
 
   def public
