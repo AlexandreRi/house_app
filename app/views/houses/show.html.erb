@@ -1,7 +1,36 @@
-<%= @house.name %>
-<%= @house.address %>
-<%= @house.price %>
-<%= @house.rating %>
-<%= link_to 'Edit this house', edit_path(@house) %>
-<%= link_to 'Back to home page', root_path %>
-<%= link_to 'Delete this house', destroy_path(@house), method: :delete %>
+<div class="container">
+  <div class="title_and_info">
+    <div><h1><%= @house.name %></h1></div>
+    <div><h2>Address:<%= @house.address %></h2></div>
+    <div><h2>Price:<%= @house.price %></h2></div>
+    <div><h2>Rating:<%= @house.rating %></h2></div>
+    <%= link_to 'Edit this house', edit_path(@house) %>
+    <%= link_to 'Back to home page', root_path %>
+    <%= link_to 'Delete this house', destroy_path(@house), method: :delete %>
+  </div>
+  <div class="image_card d-flex">
+    <div><img src="/assets/sf.jpeg" alt="photo"></div>
+    <div class="place-booking-card">
+      <h4>Book the house <br>"<%= @house.name %>"</h4>
+        <%= simple_form_for([@house, @booking]) do |f| %>
+          <div class="form-group select required">
+            <select class="form-control select required mt-4" name="date" id="date_id">
+              <option value="" disabled selected>Select a date</option>
+              <% @house.house_dates.sort_by { |date| date.date }.each do |date| %>
+                <option value="<%= date.id %>"><%= date.date.strftime('%d/%m/%Y') %> - Début : <%= date.start_at %></option>
+              <% end %>
+            </select>
+          </div>
+          <div class="form-group select required">
+            <select class="form-control select required" name="nb_part" id="workshop_level">
+                <option value="" disabled selected>Nombre de place(s)</option>
+            </select>
+          </div>
+          <div class="price-workshop">
+            <h5><strong><%= humanized_money(@workshop.price) %>€</strong><span id="small-per-pers"> /pers</span></h5>
+          </div>
+          <%= f.submit 'Réserver', class: 'button btn-white' %>
+        <% end %>
+    </div>
+  </div>
+</div>
