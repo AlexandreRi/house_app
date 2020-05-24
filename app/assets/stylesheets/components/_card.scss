@@ -1,12 +1,14 @@
 .house-card-index {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
+  overflow: hidden;
+  background: white;
 }
 
-.logo {
-  height: 40px;
-  width: 40px;
-}
+// .logo {
+//   height: 40px;
+//   width: 40px;
+// }
 
 .img-house-card-index img {
   object-fit: cover;
@@ -14,16 +16,23 @@
 }
 
 .home-card-infos {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   h1 {
-    font-size: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #244AFB;
   }
-  .house-name {
-    margin: 5px;
-  }
-  .house-address {
-    margin: 5px;
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0px;
+    color: #244AFB;
   }
   .house-price-rating {
-    margin: 5px;
+    margin: 0px;
   }
 }

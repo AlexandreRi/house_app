@@ -9,7 +9,7 @@
             <div class="form-group string optional filter_date">
               <input class="form-control string optional datepicker flatpickr-input" type="text" name="filter[date]" id="filter_date" readonly="readonly" placeholder="Choose une date">
             </div>
-            <%= submit_tag "Rechercher", class: "button-btn-blue" %>
+            <%= submit_tag "Search", class: "button-btn-blue" %>
             <% end %>
           </div>
         </div>
@@ -26,18 +26,20 @@
         <%= link_to house_path(house) do %>
           <div class="house-card-index">
             <div class="img-house-card-index">
-            <%= image_tag "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80", alt: "house-app" %>
+              <% if house.photo.attached? %>
+                <%= image_tag house.photo.key, alt: "house picture", id: "avatar", width: 250, crop: :fill  %>
+              <% else %>
+                <%= image_tag "sf.jpeg", id: "avatar", width: 250, crop: :fill %>
+              <% end %>
             </div>
             <div class="home-card-infos">
-              <div class="house-name">
+              <div class="house-name-address">
                 <h1><%= house.name %></h1>
-              </div>
-              <div class="house-address">
-                <%= house.address %>
+                <p><%= house.address %></p>
               </div>
               <div class="house-price-rating d-flex justify-content-between">
-                <div><%= house.price %></div>
-                <div><%= house.rating %></div>
+                <p><%= house.price %>€</p>
+                <p><%= house.rating %></p>
               </div>
             </div>
           </div>

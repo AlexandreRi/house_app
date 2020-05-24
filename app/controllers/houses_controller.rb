@@ -47,6 +47,6 @@ class HousesController < ApplicationController
   private
 
   def strong_params
-    params.require(:house).permit(:name, :address, :price, :description, :rating)
+    params.require(:house).permit(:name, :address, :price, :description, :rating, :photo)
   end
 end
