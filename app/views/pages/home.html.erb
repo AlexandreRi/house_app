@@ -1,4 +1,4 @@
-<div class="banner-home", style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "sf.jpg" %>)">
+<div class="banner-home", style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "pic.jpg" %>)">
   <div class="container d-flex justify-content-around">
     <h1>Book a house <br>wherever you want</h1>
     <div class="col-sm-12 col-md-8 col-lg-5 bg-white p-3 home-search-form">
@@ -17,7 +17,6 @@
   </div>
 </div>
 
-
 <div class="container">
   <div class="h1-suggestions"><h1>Our top choices</h1></div>
   <div class="row">
@@ -27,7 +26,7 @@
           <div class="house-card-index">
             <div class="img-house-card-index">
               <% if house.photo.attached? %>
-                <%= image_tag house.photo.key, alt: "house picture", id: "avatar", width: 250, crop: :fill  %>
+                <%= image_tag house.photo, alt: "house picture", id: "avatar", width: 250, height: 200, crop: :fill  %>
               <% else %>
                 <%= image_tag "sf.jpeg", id: "avatar", width: 250, crop: :fill %>
               <% end %>
