@@ -8,5 +8,5 @@ environment.plugins.prepend('Provide',
     'window.jQuery': 'jquery'
  })
 )
-
+environment.loaders.delete('nodeModules')
 module.exports = environment
