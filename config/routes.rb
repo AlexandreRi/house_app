@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get '/houses/:id/edit', to: 'houses#edit', as: :edit
   patch '/houses/:id', to: 'houses#update'
   delete '/houses/:id', to: 'houses#destroy', as: :destroy
+  resources :houses do
+    resources :house_dates, only: [:new, :create]
+    resources :bookings, only: :create
+  end
 end

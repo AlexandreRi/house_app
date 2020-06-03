@@ -26,9 +26,6 @@
                 <option value="" disabled selected>Nombre de place(s)</option>
             </select>
           </div>
-          <div class="price-workshop">
-            <h5><strong><%= humanized_money(@workshop.price) %>€</strong><span id="small-per-pers"> /pers</span></h5>
-          </div>
           <%= f.submit 'Réserver', class: 'button btn-white' %>
         <% end %>
     </div>

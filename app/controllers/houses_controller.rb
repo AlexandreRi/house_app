@@ -22,6 +22,7 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     authorize @house
+    @booking = Booking.new
   end
 
   def create
